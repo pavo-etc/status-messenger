@@ -25,11 +25,3 @@ Once you have installed the extension, set up your remote URL by running **Set R
 ### 1.0.0
 
 Initial release of Status Messenger
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-
