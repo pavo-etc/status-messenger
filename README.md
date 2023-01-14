@@ -22,6 +22,11 @@ Once you have installed the extension, set up your remote URL by running **Set R
 
 ## Release Notes
 
+### 1.0.4
+
+ - Fix hiding persistence
+
+
 ### 1.0.3
 
  - Update readme
