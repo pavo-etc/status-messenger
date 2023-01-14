@@ -1,10 +1,10 @@
-# status-messenger
+# Status Messenger
 
 Status Messenger allow you to have message appear in your VS Code status bar sourced from a remote server periodically updates
 
 ## Features
 
-Connects to an arbitrary API that passes JSON object with messages, and displays them in the status bar of VS Code.  The server is polled every 20 mins.
+Connects to an arbitrary API that passes JSON object with messages, and displays them in the status bar of VS Code. The server is polled every 20 mins.
 
 ![In action](./assets/screenshot.png)
 
@@ -21,6 +21,15 @@ Once you have installed the extension, set up your remote URL by running **Set R
 ![Commands](./assets/commands.png)
 
 ## Release Notes
+
+### 1.0.2
+
+- Add license
+- Remove extra activation
+
+### 1.0.1
+
+- Add icon
 
 ### 1.0.0
 
