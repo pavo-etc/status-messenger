@@ -35,17 +35,18 @@ export function activate(context: vscode.ExtensionContext) {
 		statusbarItem.hide();
 		isVisible = false;
 		workspaceState.update("isVisible", isVisible);
-		clearInterval(autoupdater);
+		if (autoupdater !== undefined) { clearInterval(autoupdater); }
 	});
 
 	statusbarItem.command = updateId;
 	context.subscriptions.push(updateFun);
 
-	autoupdater = setInterval(() => {
+	if (isVisible) {
+		autoupdater = setInterval(() => {
+			updateStatusBarItem();
+		}, 1200000);
 		updateStatusBarItem();
-	}, 1200000);
-
-	updateStatusBarItem();
+	}
 }
 
 function updateStatusBarItem(): void {
