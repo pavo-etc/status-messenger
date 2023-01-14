@@ -1,6 +1,6 @@
 # Status Messenger
 
-Status Messenger allow you to have message appear in your VS Code status bar sourced from a remote server periodically updates
+Status Messenger allow you to have messages appear in your VS Code status bar from a remote server.
 
 ## Features
 
@@ -21,6 +21,10 @@ Once you have installed the extension, set up your remote URL by running **Set R
 ![Commands](./assets/commands.png)
 
 ## Release Notes
+
+### 1.0.3
+
+ - Update readme
 
 ### 1.0.2
 
