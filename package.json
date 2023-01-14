@@ -1,8 +1,13 @@
 {
   "name": "status-messenger",
-  "displayName": "status-messenger",
+  "displayName": "Status Messenger",
   "description": "Displays an updating message in the status bar from a remote server",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "publisher": "ZachManson",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pavo-etc/status-messenger.git"
+  },
   "engines": {
     "vscode": "^1.74.0"
   },
