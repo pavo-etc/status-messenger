@@ -4,6 +4,7 @@
   "description": "Displays an updating message in the status bar from a remote server",
   "version": "1.0.0",
   "publisher": "ZachManson",
+  "icon": "assets/icon.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/pavo-etc/status-messenger.git"
