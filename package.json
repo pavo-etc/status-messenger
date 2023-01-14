@@ -2,7 +2,7 @@
   "name": "status-messenger",
   "displayName": "Status Messenger",
   "description": "Displays an updating message in the status bar from a remote server",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "publisher": "ZachManson",
   "icon": "assets/icon.png",
   "license": "MIT",
