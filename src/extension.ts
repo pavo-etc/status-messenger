@@ -8,7 +8,6 @@ type MessageDto = {
 	[key: string]: string
 };
 let lastUpdate: MessageDto = {};
-let previousMessage: string;
 let remoteURL: string;
 let messageVariant: string;
 let statusbarItem: vscode.StatusBarItem;
@@ -49,6 +48,9 @@ export function activate(context: vscode.ExtensionContext) {
 	}
 }
 
+/**
+ * Wrapper around makeRequest, restarts timer if timer has been disabled
+ */
 function updateStatusBarItem(): void {
 	if (!isVisible) {
 		autoupdater = setInterval(() => {
@@ -61,10 +63,16 @@ function updateStatusBarItem(): void {
 	makeRequest();
 }
 
+/**
+ * Make request to remote server. Write result to the statusbar if there if !!pickVariantAfter.
+ * Else prompt user to messageVariant. On error it reverts to the previously set message.
+ * @param pickVariantAfter Prompt user to choose variant after request succeeds
+ */
 function makeRequest(pickVariantAfter = false) {
 	const httplib = remoteURL.startsWith("https") ? https : http;
+	let previousMessage = statusbarItem.text;
 	httplib.get(remoteURL, (resp: http.IncomingMessage) => {
-		previousMessage = statusbarItem.text;
+
 		statusbarItem.text = "Updating...";
 		statusbarItem.show();
 
@@ -105,6 +113,9 @@ function makeRequest(pickVariantAfter = false) {
 	});
 }
 
+/**
+ * Prompt user to set remote URL, save result to workspace state.
+ */
 async function setRemote() {
 	const result = await vscode.window.showInputBox({
 		value: remoteURL,
@@ -120,6 +131,10 @@ async function setRemote() {
 	}
 }
 
+/**
+ * Prompt user to choose a message variant.
+ * @param includeRefresh boolean to show the manual refresh option in the prompt
+ */
 async function setMessageVariant(includeRefresh = false) {
 	const options = includeRefresh ? ["Manual Refresh", ...Object.keys(lastUpdate)] : Object.keys(lastUpdate);
 	const result = await vscode.window.showQuickPick(options, {
@@ -135,6 +150,11 @@ async function setMessageVariant(includeRefresh = false) {
 	}
 }
 
+/**
+ * Validate URL
+ * @param testStr
+ * @returns boolean true is valid web URL
+ */
 function isValidHttpUrl(testStr: string) {
 	let url;
 
