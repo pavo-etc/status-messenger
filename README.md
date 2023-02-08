@@ -22,6 +22,10 @@ Once you have installed the extension, set up your remote URL by running **Set R
 
 ## Release Notes
 
+### 1.0.5
+
+ - Make previous message ephemeral, not shared between network calls.
+
 ### 1.0.4
 
  - Fix hiding persistence
